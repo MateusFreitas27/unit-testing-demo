@@ -1,0 +1,21 @@
+<!-- Start Navbar-->
+
+<div class="custom-navbar">
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <button mat-button class="brand-icon">
+      <span>Flex Demo</span>
+    </button>
+    <div class="nav-items" fxShow="true" fxHide.lt-sm="true">
+      <button mat-button *ngFor="let menuItem of menuItems">{{ menuItem.name }}</button>
+    </div>
+    <div fxHide fxShow.xs>
+      <button mat-icon-button [matMenuTriggerFor]="navItems" class="more-icon">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+    <mat-menu #navItems>
+      <button mat-menu-item *ngFor="let menuItem of menuItems">{{ menuItem.name }}</button>
+    </mat-menu>
+  </div>
+</div>
+<!-- End Navbar-->

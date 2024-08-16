@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Add Product</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="productForm">
+    <div class="">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="title" />
+      </mat-form-field>
+    </div>
+    <div class="">
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Placeholder" formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="">
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="price" type="number" />
+      </mat-form-field>
+    </div>
+    <div class="">
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="category">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button class="add-button" [mat-dialog-close]="true" (click)="saveProduct()">Save</button>
+</mat-dialog-actions>

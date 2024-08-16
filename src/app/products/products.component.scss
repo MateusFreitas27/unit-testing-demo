@@ -1,0 +1,31 @@
+.main-content {
+  padding: 50px;
+  margin: 0 !important;
+
+  .product-card {
+    width: 350px;
+    height: 400px;
+    margin-bottom: 30px;
+
+    h1 {
+      margin-top: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-align: center;
+      text-overflow: ellipsis;
+      width: 300px;
+      display: inline-block;
+    }
+
+    span {
+      font-size: large;
+      font-weight: 600;
+    }
+  }
+}
+
+.add-button {
+  margin: 15px;
+  color: #fff;
+  background-color: #595997;
+}

@@ -1,0 +1,27 @@
+<button mat-raised-button class="add-button" (click)="openDialog()">Add Product</button>
+<div class="main-content" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap.gt-sm="30px grid"
+  fxLayoutGap.sm="50px" fxLayoutGap.lt-sm="50px" fxLayout.lt-sm="column">
+  <ng-container *ngIf="productData else displaySpinner">
+    <div *ngFor="let product of productData" class="product-card">
+      <mat-card>
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center center">
+            <img [src]="product.image" alt="" height="250px" width="250px">
+            <h1>{{product.title}}</h1>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <span>$ {{product.price}}</span>
+            <div fxLayout="row">
+              <mat-icon (click)="editProduct(product)">edit</mat-icon>
+              <mat-icon (click)="deleteProduct(product)">delete</mat-icon>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+
+  <ng-template #displaySpinner>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>
